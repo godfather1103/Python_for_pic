@@ -35,21 +35,20 @@ def pic(url,count_limt):
             
             if link is None:
                 continue
-            if  link[-3:] in ['gif','png']:
+            if  link[-3:] in ['gif']:
                 continue
             try:
-                #print (link)
-                content2 = urllib2.urlopen(link).read()
-                #print type(content2)
+                content = urllib2.urlopen(link).read()
+                if len(content)<=9999:
+                    continue
             except:
                 continue    
             flag = random.randint(0, 1000)
             #设置图片的名称
             name = time.strftime('%Y-%m-%d_%H-%M-%S',time.localtime(time.time()))+str(flag)
             #D:\\JSP\\pic书图片的存储路径
-            
             with open(u'D:\\JSP\\pic'+'\\'+name+link[-5:],'wb') as code:
-                code.write(content2)
+                code.write(content)
                 count += 1
                 #print count
             if count == count_limt:
