@@ -26,11 +26,12 @@ def pic(url,count_limt):
         #print(link)       
         if link is None:
             continue
-        if  link[-3:] in ['gif','png']:
+        if  link[-3:] in ['gif']:
             continue
         try: 
             content = urllib.request.urlopen(link).read()
-            if len(content)<=9999:
+            #定义图片大小，过滤小图片，例如：20480过滤小于20480B的图片
+            if len(content)<=20480:
                 continue
         except:
             continue    

@@ -39,8 +39,10 @@ def pic(url,count_limt):
                 continue
             try:
                 content = urllib2.urlopen(link).read()
-                if len(content)<=9999:
+                #定义图片大小，过滤小图片，例如：20480过滤小于20480B的图片
+                if len(content)<=20480:
                     continue
+                #print len(content)
             except:
                 continue    
             flag = random.randint(0, 1000)
