@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 import socket
 import time
 import random
-#from test.test_socket import try_address
+
 
 #伪装浏览器,以免被封
 def user_agent(url):
