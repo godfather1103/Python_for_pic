@@ -33,8 +33,8 @@ def loop(url):
 #双向队列 用于存放访问过的url
 queue = deque()
 #入口地址
-url = 'http://www.wmpic.me/tupian/yijing/'
-#url = 'http://www.mzitu.com/share'
+#url = 'http://www.wmpic.me/tupian/yijing/'
+url = 'http://www.mzitu.com/share'
 queue.append(url)
 count1 = 0
 #设置爬取的图片数和网页数
