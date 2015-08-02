@@ -38,7 +38,9 @@ def pic(url,count_limt):
             if  link[-3:] in ['gif']:
                 continue
             try:
-                content = urllib2.urlopen(link).read()
+                #读取图片到content
+                #content = urllib2.urlopen(link).read()
+                content = user_agent(link).read()
                 #定义图片大小，过滤小图片，例如：20480过滤小于20480B的图片
                 if len(content)<=20480:
                     continue
