@@ -3,9 +3,8 @@
 Created on 2015年5月29日
 
 @author: ccb
-'''
-#import py.snippet3  
-from py import snippet3
+''' 
+from py import spyder_for_pic
 from bs4 import BeautifulSoup
 from collections import deque
 
@@ -23,9 +22,9 @@ url_cont = 20
 def loop(url):
     print(url)
     global count1
-    count1 += snippet3.pic(url,pic_cont-count1)
+    count1 += spyder_for_pic.pic(url,pic_cont-count1)
     #print('count1='+str(count1))
-    soup = BeautifulSoup(snippet3.user_agent(url))
+    soup = BeautifulSoup(spyder_for_pic.user_agent(url))
     tag_a = soup.find_all(['a','A'])
     for a in tag_a:
         link = a.get('href')
